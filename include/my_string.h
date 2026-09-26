@@ -74,6 +74,9 @@ private:
     // TODO: 在这里添加你自己的私有数据成员与辅助函数。
     //       可以自由选择内部表示（例如缓冲区指针 + 长度 + 容量），
     //       只要公开接口的语义满足 TASKS.md 的要求即可。
+    char* data_;
+    std::size_t size_;
+    std::size_t capacity_;
 };
 
 #endif  // ASSIGNMENT2_MY_STRING_H
