@@ -71,9 +71,9 @@ public:
     friend std::istream& operator>>(std::istream& is, String& str);
 
 private:
-    // TODO: 在这里添加你自己的私有数据成员与辅助函数。
-    //       可以自由选择内部表示（例如缓冲区指针 + 长度 + 容量），
-    //       只要公开接口的语义满足 TASKS.md 的要求即可。
+    char* data_;              // 指向容量为 capacity_ + 1 的缓冲区
+    std::size_t size_;        // 字符数，不含结尾的 '\0'
+    std::size_t capacity_;    // 可存放的字符数，不含结尾的 '\0'
 };
 
 #endif  // ASSIGNMENT2_MY_STRING_H
