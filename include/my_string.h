@@ -22,6 +22,7 @@
 #include <cstddef>
 #include <iosfwd>
 
+
 class String {
 public:
     // ---- 构造 / 析构（Rule of Five）----
@@ -74,6 +75,11 @@ private:
     // TODO: 在这里添加你自己的私有数据成员与辅助函数。
     //       可以自由选择内部表示（例如缓冲区指针 + 长度 + 容量），
     //       只要公开接口的语义满足 TASKS.md 的要求即可。
+    char* data_;   // 指向 new char[capacity_ + 1] 的缓冲区
+    std::size_t size_;  // 当前长度（不含结尾 '\0'）
+    std::size_t capacity_;   // 当前容量（不含结尾 '\0'）
+    void ensure_capacity(std::size_t);
+
 };
 
 #endif  // ASSIGNMENT2_MY_STRING_H
